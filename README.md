@@ -11,3 +11,10 @@ GAS_REPORT=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+
+## ✈️ A note on contract redeploys
+Let's say you want to change your contract. You'd need to do 3 things:
+
+1. We need to deploy it again.
+2. We need to update the contract address on our frontend.
+3. We need to update the abi file on our frontend.

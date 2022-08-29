@@ -26,6 +26,8 @@ contract MyEpicNFT is ERC721URIStorage {
     string[] secondWords = ["Control", "Football", "Theory", "Fishing", "Quality", "Cell", "Power", "User", "Computer", "Hat", "Disaster", "Possibility", "Area", "Priority", "Thanks"];
     string[] thirdWords = ["Elect", "Price", "Load", "Enhance", "Occur", "Enforce", "Realize", "Reach", "Shrug", "Rest", "Receive", "Motivate", "Hesitate", "Supplement", "Peer"];
 
+    event NewEpicNFTMinted(address sender, uint256 tokenId);
+
     // We need to pass the name of our NFTs token and its symbol.
     constructor() ERC721 ("SquareNFT", "SQUARE") {
         console.log("Saying hello from my second Solidity smart-contract!");
@@ -106,5 +108,6 @@ contract MyEpicNFT is ERC721URIStorage {
 
         // Increment the counter for when the next NFT is minted.
         _tokenIds.increment();
+        emit NewEpicNFTMinted(msg.sender, newItemId);
     }
 }
